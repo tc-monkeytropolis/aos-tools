@@ -47,6 +47,10 @@ static struct option options[] =
 	{ "a5",		no_argument,		&device, MPK_DEVICE_A5 },
 	{ "a5it",		no_argument,		&device, MPK_DEVICE_A5IT },
 	{ "a3g",		no_argument,		&device, MPK_DEVICE_A3GP },
+	{ "g8a",	no_argument,		&device, MPK_DEVICE_G8A },
+	{ "g8v2",	no_argument,		&device, MPK_DEVICE_G8AV2 },
+	{ "g9a",	no_argument,		&device, MPK_DEVICE_G9A },
+	{ "g10a",	no_argument,		&device, MPK_DEVICE_G10A },
 	
 	/* Generic options */
 	{ "verbose",	no_argument,		0, 'v' },
@@ -916,6 +920,10 @@ int main(int argc, char *argv[])
 		printf("  --a5\t\t\tAssume the target .aos is for the Archos 5/7 devices\n");
 		printf("  --a5it\t\tAssume the target .aos is for the Archos 5 Internet Tablet with Android\n");
 		printf("  --a3g\t\t\tAssume the target .aos is for the Archos 3G+ from SFR\n");
+		printf("  --g8a\t\t\tAssume the target .aos is for the Archos Gen8 devices\n");
+		printf("  --g8av2\t\t\tAssume the target .aos is for the Archos Gen8 V2 Internet Tablet (A70ITV2)\n");
+		printf("  --g9a\t\t\tAssume the target .aos is for the Archos Gen9 Internet Tablet Series\n");
+		printf("  --g10a\t\t\tAssume the target .aos is for the Archos Gen10 Internet Tablet Series\n");
 		printf("    In most cases, this can be auto-detected.\n");
 		printf("\n");
 		printf("  --help, -h\t\tDisplay this text\n");
