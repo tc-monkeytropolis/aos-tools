@@ -2,6 +2,7 @@
  * Written by EiNSTeiN_
  * 		http://archos.g3nius.org/
  * Enhanced by scholbert
+ * Further enhanced by tc
  * Released under the GNU General Public License v2
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
@@ -13,15 +14,16 @@
 
 #include "keys.h"
 
-#define MPK_DEVICE_A5			0
+#define MPK_DEVICE_A5		0
 #define MPK_DEVICE_A5IT		1
 #define MPK_DEVICE_A3GP		2
-#define MPK_DEVICE_G8A          3
+#define MPK_DEVICE_G8A      3
 #define MPK_DEVICE_G8AV2	4
 #define MPK_DEVICE_G9A		5
 #define MPK_DEVICE_G10A		6
+#define MPK_DEVICE_A605WIFI 7
 
-#define MPK_KNOWN_DEVICES	7 // number of keys in each array
+#define MPK_KNOWN_DEVICES	8 // number of keys in each array
 
 static unsigned char *AES_Keys[] = {
 	A5_AES,
@@ -31,6 +33,7 @@ static unsigned char *AES_Keys[] = {
 	G8AV2_AES,
 	G9A_AES,
 	G10A_AES,
+	A605WIFI_AES,
 };
 
 static unsigned char *Bootloader_Keys[] = {
@@ -41,6 +44,7 @@ static unsigned char *Bootloader_Keys[] = {
 	G8AV2_BOOTLOADER,
 	G9A_BOOTLOADER,
 	G10A_BOOTLOADER,
+	A605WIFI_BOOTLOADER,
 };
 
 static unsigned char *Rel_Keys[] = {
@@ -51,6 +55,7 @@ static unsigned char *Rel_Keys[] = {
 	G8AV2_RELMPK,
 	G9A_RELMPK,
 	G10A_RELMPK,
+	A605WIFI_RELMPK,
 };
 
 static unsigned char *Dev_Keys[] = {
@@ -61,6 +66,7 @@ static unsigned char *Dev_Keys[] = {
 	G8AV2_DEVMPK,
 	G9A_DEVMPK,
 	G10A_DEVMPK,
+	A605WIFI_DEVMPK,
 };
 
 static unsigned char *Plug_Keys[] = {
@@ -71,6 +77,7 @@ static unsigned char *Plug_Keys[] = {
 	G8AV2_PLUGMPK,
 	G9A_PLUGMPK,
 	G10A_PLUGMPK,
+	A605WIFI_PLUGMPK,
 };
 
 static unsigned char *HDD_Keys[] = {
@@ -81,6 +88,7 @@ static unsigned char *HDD_Keys[] = {
 	G8AV2_HDDMPK,
 	G9A_HDDMPK,
 	G10A_HDDMPK,
+	A605WIFI_HDDMPK,
 };
 
 static unsigned char *Games_Keys[] = {

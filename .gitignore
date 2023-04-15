@@ -54,7 +54,9 @@ tools/firmw*
 tools/aos-info
 tools/aos-repack
 tools/aos-unpack
+tools/aos-fix
 tools/firmware_archos_it4
+*.aos
 
 # Git artifacts
 *.orig

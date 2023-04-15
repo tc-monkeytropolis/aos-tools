@@ -56,6 +56,7 @@ const char *mpk_device_type(int device)
 	case MPK_DEVICE_G8AV2:	return "Archos Gen8 V2";
 	case MPK_DEVICE_G9A:	return "Archos Gen9";
 	case MPK_DEVICE_G10A:	return "Archos Gen10";
+	case MPK_DEVICE_A605WIFI:	return "Archos A605 Wifi";
 	}
 	
 	return "Unknown";
