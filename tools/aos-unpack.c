@@ -675,6 +675,9 @@ int do_aos(const char *filename, uint8_t *buffer, unsigned int length)
 	struct aos_file *aos;
 	int detected_device = device;
 
+	if(verbose)
+		printf("Creating AOS object...\n");
+
 	// Create the aos object
 	aos = aos_create(buffer, length);
 	if(aos == NULL) {
@@ -682,14 +685,20 @@ int do_aos(const char *filename, uint8_t *buffer, unsigned int length)
 		return 1;
 	}
 	
+	if(verbose)
+		printf("Parsing AOS header...\n");
+
 	// Parse & verify the header
 	if(!parse_aos_header(aos, &detected_device)) {
 		aos_free(aos);
 		return 1;
 	}
-	
+
 	// Decrypt the file
 	if(aos_is_encrypted(aos)) {
+		if(verbose)
+			printf("Decrypting file...\n");
+
 		if(!aos_decrypt_file(aos, AES_Keys[detected_device])) {
 			fprintf(stderr, "%s: Failed to decrypt the file.\n", program);
 			

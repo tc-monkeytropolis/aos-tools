@@ -122,10 +122,14 @@ uint8_t *aos_cipher_decrypt(struct aos_encryption *enc, const uint8_t *in, unsig
 	uint8_t *decrypted;
 	unsigned int done = 0;
 	
+	printf("Allocating memory...\n");
+
 	decrypted = (uint8_t *)malloc(length);
 	if(!decrypted)
 		return NULL;
 	
+	printf("Decrypt start...\n");
+
 	while(done < length) {
 		uint8_t iv[AES_BLOCK_SIZE];
 		uint8_t data[AES_BLOCK_SIZE];

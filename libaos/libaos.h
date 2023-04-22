@@ -19,6 +19,7 @@
 #define AOS_MAGIC				0x32534F41	// AOS2
 
 // Signature blocks
+#define AOS_TYPE_SIGN			0x4E474953  // SIGN - a legacy signature block used on Gen 4 and earlier devices.
 #define AOS_TYPE_SIG0			0x30474953	// SIG0
 #define AOS_TYPE_SIG1			0x31474953	// SIG1
 #define AOS_TYPE_SIG2			0x32474953	// SIG2
@@ -26,7 +27,7 @@
 #define AOS_TYPE_SIG4			0x34474953	// SIG4
 
 // Header Blocks
-#define AOS_TYPE_CIPHER		0x48504943	// CIPH
+#define AOS_TYPE_CIPHER			0x48504943	// CIPH
 #define AOS_TYPE_UNIT			0x54494E55	// UNIT
 #define AOS_TYPE_VERSION		0x53524556	// VERS
 #define AOS_TYPE_DURATION		0x454d4954	// TIME
@@ -37,7 +38,7 @@
 
 // File operations
 #define AOS_TYPE_COPY			0x59504F43	// COPY
-#define AOS_TYPE_DELETE		0x54454c44	// DLET
+#define AOS_TYPE_DELETE			0x54454c44	// DLET
 #define AOS_TYPE_MOVE			0x45564f4d	// MOVE
 #define AOS_TYPE_SHELL			0x4c454853	// SHEL
 

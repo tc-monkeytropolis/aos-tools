@@ -22,8 +22,9 @@
 #define MPK_DEVICE_G9A		5
 #define MPK_DEVICE_G10A		6
 #define MPK_DEVICE_A605WIFI 7
+#define MPK_DEVICE_A604		8
 
-#define MPK_KNOWN_DEVICES	8 // number of keys in each array
+#define MPK_KNOWN_DEVICES	9 // number of keys in each array
 
 static unsigned char *AES_Keys[] = {
 	A5_AES,
@@ -34,6 +35,7 @@ static unsigned char *AES_Keys[] = {
 	G9A_AES,
 	G10A_AES,
 	A605WIFI_AES,
+	A604_AES
 };
 
 static unsigned char *Bootloader_Keys[] = {
@@ -95,6 +97,18 @@ static unsigned char *Games_Keys[] = {
 	A5_GAMESMPK,
 	A5IT_GAMESMPK,
 	A3GP_GAMESMPK,
+};
+
+static unsigned char *Legacy_Keys[] = {
+	A5_RELMPK, //these are all placeholders to pad us out.
+	A5IT_RELMPK,
+	A3GP_RELMPK,
+	G8A_RELMPK,
+	G8AV2_RELMPK,
+	G9A_RELMPK,
+	G10A_RELMPK,
+	A605WIFI_RELMPK,
+	A604_MPK, //actual keys start here
 };
 
 unsigned char **mpk_possible_aos_keys(uint32_t sign_type);

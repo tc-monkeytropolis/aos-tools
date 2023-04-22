@@ -109,25 +109,42 @@ int aos_decrypt_file(struct aos_file *file, const uint8_t *aes_key)
 	unsigned int length;
 	uint8_t *decrypted;
 	uint8_t *data;
-	
+
+	printf("Getting cipher block...\n");
+
 	block = block_get(file, AOS_CIPHER_BLOCK_ID);
 	if(block == NULL)
 		return 0;
 	
+	printf("Checking cipher block length...\n");
+
 	if(block->length != sizeof(struct aos_block)+sizeof(struct aos_block_cipher))
 		return 0;
 	
+	printf("Setting IV...\n");
+
 	aos_cipher_set_iv(&enc, (const uint8_t *)&block->data[4]);
+
+	printf("Setting key...\n");
+
 	aos_cipher_set_decrypt_key(&enc, aes_key);
+	
+	printf("Getting lengths...\n");
 	
 	data = (uint8_t *)block + block->length;
 	length = file->length - (data - file->data);
 	
+	printf("Running decrypt...\n");
+
 	decrypted = aos_cipher_decrypt(&enc, data, length);
 	if(!decrypted)
 		return 0;
+
+	printf("Copying result to memory...\n");
 	
 	memcpy(data, decrypted, length);
+
+	printf("Cleaning up...\n");
 	free(decrypted);
 	
 	return 1;

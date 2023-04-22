@@ -7,7 +7,7 @@ AOS_REPACK_OBJECTS=aos-repack.o files.o mpk.o
 all: aos-info aos-unpack aos-fix aos-repack
 
 .c.o:
-	gcc -c $*.c
+	gcc -c -g $*.c
 
 aos-info: $(AOS_INFO_OBJECTS)
 	gcc -o aos-info $(AOS_INFO_OBJECTS) -L../libaos -laos -lcrypto
